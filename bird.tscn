@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8vk5b8dglauq"]
+
+[ext_resource type="Texture2D" uid="uid://24pjbwdtgtuo" path="res://assets/bird/Bird.png" id="1_crnqq"]
+[ext_resource type="Script" uid="uid://drkd6htkpa0vw" path="res://Bird.cs" id="1_j88tq"]
+[ext_resource type="Texture2D" uid="uid://b5nqbp0ngnuwd" path="res://assets/bird/BirdWithWings.png" id="2_j88tq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crnqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_crnqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j88tq")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j88tq"]
+radius = 12.0
+
+[node name="Bird" type="CharacterBody2D"]
+physics_interpolation_mode = 1
+script = ExtResource("1_j88tq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_crnqq")
+animation = &"jump"
+frame_progress = 0.765366
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_j88tq")
