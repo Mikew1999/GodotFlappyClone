@@ -6,6 +6,9 @@ public partial class Hud : CanvasLayer
 	[Signal]
 	public delegate void StartGameEventHandler();
 	
+	[Signal]
+	public delegate void ScoreIncrementHandler();
+	
 	public void ShowMessage(string text)
 	{
 		var message = GetNode<Label>("Message");

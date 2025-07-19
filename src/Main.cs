@@ -3,14 +3,14 @@ using System;
 
 public partial class Main : Node
 {
-	private int _score;
+	public Vector2 screenSize;
 
 	public override void _Ready()
 	{
+		screenSize = GetViewport().GetVisibleRect().Size;
 	}
 	
 	public void NewGame() {
-		GD.Print("game started");
 		var bird = GetNode<Bird>("Bird");
 		var startPosition = new Vector2(350, 350);
 		var Hud = GetNode<Hud>("Hud");

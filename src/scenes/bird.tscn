@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8vk5b8dglauq"]
 
-[ext_resource type="Texture2D" uid="uid://24pjbwdtgtuo" path="res://assets/bird/Bird.png" id="1_crnqq"]
-[ext_resource type="Script" uid="uid://drkd6htkpa0vw" path="res://Bird.cs" id="1_j88tq"]
-[ext_resource type="Texture2D" uid="uid://b5nqbp0ngnuwd" path="res://assets/bird/BirdWithWings.png" id="2_j88tq"]
+[ext_resource type="Texture2D" uid="uid://24pjbwdtgtuo" path="res://src/assets/bird/Bird.png" id="1_crnqq"]
+[ext_resource type="Script" uid="uid://drkd6htkpa0vw" path="res://src/scripts/Bird.cs" id="1_j88tq"]
+[ext_resource type="Texture2D" uid="uid://b5nqbp0ngnuwd" path="res://src/assets/bird/BirdWithWings.png" id="2_j88tq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_crnqq"]
 animations = [{
