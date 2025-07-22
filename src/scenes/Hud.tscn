@@ -5,7 +5,7 @@
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_d4yu0")
 
-[node name="Score Label" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -50,8 +50,4 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Start Game"
 
-[node name="ScoreTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
-[connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]

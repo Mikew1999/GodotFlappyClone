@@ -6,9 +6,6 @@ public partial class Hud : CanvasLayer
 	[Signal]
 	public delegate void StartGameEventHandler();
 	
-	[Signal]
-	public delegate void ScoreIncrementHandler();
-	
 	public void ShowMessage(string text)
 	{
 		var message = GetNode<Label>("Message");
@@ -33,24 +30,17 @@ public partial class Hud : CanvasLayer
 		//await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
 		GetNode<Button>("StartButton").Show();
 	}
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 	
 	private void OnStartButtonPressed()
 	{
 		GetNode<Button>("StartButton").Hide();
 		EmitSignal(SignalName.StartGame);
+		
 	}
 	
-	public void OnScoreTimerTimeout() {
-		
+	public void SetScore(int score)
+	{
+		GD.Print("Score: " + score);
+		GetNode<Label>("ScoreLabel").Text = score.ToString();
 	}
 }

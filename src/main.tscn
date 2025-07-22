@@ -13,11 +13,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.273081, 0.735724, 0.301996, 1)
+color = Color(0.423529, 0.333333, 1, 1)
 
 [node name="Bird" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="Hud" parent="." instance=ExtResource("3_h2yge")]
 
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="Hit" from="Bird" to="." method="GameOver"]
 [connection signal="StartGame" from="Hud" to="." method="NewGame"]
+[connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]
